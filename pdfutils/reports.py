@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import posixpath
 import sys
 import tempfile
 
@@ -67,7 +66,7 @@ class ReportBase(TemplateView):
         out = []
         for style in self.get_styles():
             path = style
-            normalized_path = posixpath.normpath(unquote(path)).lstrip('/')
+            normalized_path = os.path.normpath(unquote(path)).lstrip('/')
             absolute_path = finders.find(normalized_path)
             if absolute_path:
                 with open (absolute_path, "r") as fd:
