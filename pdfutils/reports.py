@@ -44,8 +44,6 @@ class ReportBase(TemplateView):
         return self.context
 
     def add_styles(self, styles):
-        self.__styles = []
-
         for style in styles:
             self.__styles.append(style)
 
