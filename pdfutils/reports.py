@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import sys
-import tempfile
 
 try:
     from urllib.parse import unquote
@@ -12,7 +10,6 @@ except ImportError:     # Python 2
 from django.conf import settings
 from django.contrib.staticfiles import finders
 from django.http import HttpResponse
-from django.shortcuts import render_to_response
 from django.views.generic import TemplateView
 
 from pdfutils.utils import generate_pdf, unique
@@ -83,7 +80,8 @@ class ReportBase(TemplateView):
         Renders a PDF report to the HttpRequest object
         """
         ctx = self.get_context_data()
-        self.response = HttpResponse(content_type='application/pdf; name=%s' % self.filename())
+        self.response = HttpResponse(
+            content_type='application/pdf; name=%s' % self.filename())
 
         generate_pdf(self.template_name, \
                 file_object=self.response, context=ctx)
