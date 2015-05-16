@@ -44,7 +44,7 @@ class ReportBase(TemplateView):
         return self.context
 
     def add_styles(self, styles):
-        self.__styles.append(style)
+        self.__styles.append(styles)
 
     def get_styles(self):
         if self.orientation == 'portrait':
@@ -83,8 +83,7 @@ class ReportBase(TemplateView):
         Renders a PDF report to the HttpRequest object
         """
         ctx = self.get_context_data()
-        self.response = HttpResponse(mimetype='application/pdf', \
-                content_type='application/pdf; name=%s' % self.filename())
+        self.response = HttpResponse(content_type='application/pdf; name=%s' % self.filename())
 
         generate_pdf(self.template_name, \
                 file_object=self.response, context=ctx)
