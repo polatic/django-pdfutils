@@ -44,8 +44,7 @@ class ReportBase(TemplateView):
         return self.context
 
     def add_styles(self, styles):
-        for style in styles:
-            self.__styles.append(style)
+        self.__styles.append(style)
 
     def get_styles(self):
         if self.orientation == 'portrait':
