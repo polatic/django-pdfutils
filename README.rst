@@ -109,20 +109,3 @@ Since the default CSS (base.css, portrait.css, landscape.css) are normal static 
 from any other django app which has a `pdfutils` folder in their static folder.
 
 Note: Be sure your applications are listed in the right order in `INSTALLED_APPS` !
-
-
-Dependencies
-------------
-
-* django >=1.4, < 1.5.99
-* decorator == 3.4.0, <= 3.9.9
-* PIL == 1.1.7
-* reportlab == 2.5
-* html5lib == 0.90
-* httplib2 == 0.9
-* pyPdf == 1.13
-* xhtml2pdf == 0.0.4
-* django-xhtml2pdf == 0.0.3
-
-**Note**: dependencies versions are specified in `setup.py`. The amount of time required to find the right
-combination of dependency versions is largely to blame for the creation of this project.
