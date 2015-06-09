@@ -1,20 +1,4 @@
 @page {
-    size: letter portrait;
+    size: A3 portrait;
     margin: 2.5cm 1cm;
-    h3 { background: red; }
-    @frame header {
-        -pdf-frame-content: header;
-        top: 0.5cm;
-        left: 1cm;
-        right: 1cm;
-        height: 2cm;
-    }
-
-    @frame content {
-        -pdf-frame-content: content;
-        top: 2.5cm;
-        left: 1cm;
-        right: 1cm;
-        height: 2cm;
-    }
 }
