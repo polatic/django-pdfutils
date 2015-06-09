@@ -1,5 +1,5 @@
 @page {
-    size: letter landscape;
+    size: A2 landscape;
     margin: 2.5cm 1cm;
     @frame header {
         -pdf-frame-content: header;
