@@ -61,8 +61,11 @@ class ReportBase(TemplateView):
         for style in self.get_styles():
             path = style
             normalized_path = os.path.normpath(unquote(path)).lstrip('/')
-            # absolute_path = finders.find(normalized_path)
-            absolute_path = settings.STATIC_ROOT + '/' + normalized_path
+            absolute_path = finders.find(normalized_path)
+            
+            if absolute_path is None:
+                absolute_path = settings.STATIC_ROOT + '/' + normalized_path
+                
             if absolute_path:
                 with open (absolute_path, "r") as fd:
                     out.append(fd.read())
